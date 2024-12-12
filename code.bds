@@ -18,15 +18,13 @@ $if[$day!=$getVar[day]]
   $suppressErrors
   $httpGet[https://raw.githubusercontent.com/tsukum0/Akemi/refs/heads/main/code.bds]
   $var[release.code;$httpResult]
+  $httpAddHeader[content-type;application/x-www-form-urlencoded]
   $httpAddHeader[Accept;text/html,application/xhtml+xml,application/xml\;q=0.9,*/*\;q=0.8]
   $httpAddHeader[Cookie;default-sessionStore="$getVar[bdfd_token]"]
   $httpPost[https://botdesignerdiscord.com/app/bot/2458679/command/$var[command.id];name=$url[encode;$var[trigger]]&command=$url[encode;$var[trigger]]&replyMessage=$url[encode;$replaceText[$var[release.code];%GITHUBUPDATE%;$var[command.id];1]]&language=3]
   $var[update.status;$httpStatus]
   $var[update.result;$httpResult]
   $httpRemoveHeader[Cookie]
-  $httpPost[https://pastebin.com/api/api_post.php;api_dev_key=$getVar[pastebin_key]&api_paste_code=$url[encode;($var[update.status])
-  $var[update.result]]&api_option=paste]
-  $httpResult
  $endif
 $endif
 
