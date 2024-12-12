@@ -1,0 +1,9 @@
+$var[prefix;$getUserVar[server_prefix;$serverOwner]]
+$var[color;$getVar[color]]
+$nomention $reply
+
+$title[Hey, $displayName.]
+$description[My prefix in this server is `$var[prefix]`, use `$var[prefix]help` to see all my commands!]
+$color[#$var[color]]
+
+$c[Hello, World!]
