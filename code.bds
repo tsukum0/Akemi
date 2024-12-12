@@ -1,0 +1,34 @@
+$var[¶§∆.count;1] $nomention $reply
+$var[¶§∆;$replaceText[$repeatMessage[10;$repeatMessage[10;$repeatMessage[10;0000]]];0;;$sub[4000;$argCount[$message]]]]
+$eval[$replaceText[$var[¶§∆];0;$c[! CODE !] %{DOL}%var[%{DOL}%var[¶§∆.count\]\;%{DOL}%toLowercase[%{DOL}%message[%{DOL}%var[¶§∆.count\]\]\]\] %{DOL}%var[¶§∆.count\;%{DOL}%sum[1\;%{DOL}%var[¶§∆.count\]\]\] $c[! CODE !];-1]]
+$var[trigger;$replaceText[$getMessage[$channelID;$messageID;content];$message;;1]]
+$var[prefix;$getUserVar[server_prefix;$serverOwner]]
+$onlyIf[$var[prefix]==$var[trigger];]
+$var[version;1]
+
+$c[? Básicos ]
+
+$if[$var[1]==ping]
+**$pingms**
+$endif
+
+$if[$checkContains[ $var[1] ; help ; ajuda ]]
+...$var[1]
+$endif
+
+
+$c[? RPG ]
+
+$if[$checkContains[ $var[1] ; inventory ; inventário ; inv ]]
+...$var[1]
+$endif
+
+$if[$checkContains[ $var[1] ; statuses ; stats ; s ]]
+...$var[1]
+$endif
+
+$if[$checkContains[ $var[1] ; menu ; m ]]
+...$var[1]
+$endif
+
+$c[Hello, World!]
