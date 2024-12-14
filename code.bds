@@ -7,7 +7,7 @@ $var[prefix;$getUserVar[server_prefix;$serverOwner]]
 $onlyIf[$var[prefix]==$var[trigger];]
 $var[version;1]
 
-upd
+
 $c[? Auto Update from repo]
 
 $if[$day!=$getVar[day]]
