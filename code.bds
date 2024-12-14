@@ -1,16 +1,17 @@
 $var[¶§∆.count;1] $nomention $reply
+$var[¶§∆.x;$]
 $var[¶§∆;$replaceText[$repeatMessage[10;$repeatMessage[10;$repeatMessage[10;0000]]];0;;$sub[4000;$argCount[$message]]]]
-$eval[$replaceText[$var[¶§∆];0;$c[! CODE !] \$var[\$var[¶§∆.count\]\;\$toLowercase[\$message[\$var[¶§∆.count\]\]\]\] \$var[¶§∆.count\;\$sum[1\;\$var[¶§∆.count\]\]\] $c[! CODE !];-1]]
+$eval[$replaceText[$var[¶§∆];0;$c[! CODE !] $var[¶§∆.x]var[$var[¶§∆.x]var[¶§∆.count\]\;$var[¶§∆.x]toLowercase[$var[¶§∆.x]message[$var[¶§∆.x]var[¶§∆.count\]\]\]\] $var[¶§∆.x]var[¶§∆.count\;$var[¶§∆.x]sum[1\;$var[¶§∆.x]var[¶§∆.count\]\]\] $c[! CODE !];-1]]
 $var[trigger;$replaceText[$getMessage[$channelID;$messageID;content];$message;;1]]
 $var[prefix;$getUserVar[server_prefix;$serverOwner]]
 $onlyIf[$var[prefix]==$var[trigger];]
 $var[version;1]
 
-
+upd
 $c[? Auto Update from repo]
 
 $if[$day!=$getVar[day]]
- $var[command.id;698472844]
+ $var[command.id;%GITHUBUPDATE%]
  $setVar[day;$day]
  $httpGet[https://raw.githubusercontent.com/tsukum0/Akemi/refs/heads/main/version.bds]
  $var[release.version;$httpResult]
